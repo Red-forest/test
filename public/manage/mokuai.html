@@ -1,0 +1,55 @@
+<div class="main-liuyan">
+	<div class="main-liuyan-1">
+		<div id="mokuai-div-1">
+			<em>
+				<span class="glyphicon glyphicon-unchecked"></span>
+				<span>全选&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			</em>
+			<span>添加模块 </span>/
+			<span>删除已选 </span>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			<i>当前第<em> 1 </em>页 &nbsp;</i>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+		</div>
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="请输入搜索文本">
+			<span class="input-group-addon glyphicon glyphicon-search"></span>
+		</div>						
+	</div>
+
+
+	<div class="main-liuyan-4">
+		<ul class="list-unstyled">
+			
+		</ul>
+	</div>
+</div>
+<script>
+
+</script>
+<script>
+	
+	$('.main-liuyan-1 em:first-child').bind('click', function () {
+		bpUI.choiceAll();
+	});//全选
+	
+	$('.main-liuyan-4 em').bind('click', function () {
+		bpUI.choiceOne($(this));
+	});//单选
+	
+	$('.main-liuyan-1 span').eq(3).bind('click', function () {
+		layer.confirm('确定删除？', function (index) {
+			layer.msg('删除成功！');
+		});
+		bpUI.del();//删除
+	});
+	
+</script>
+	
+	
+	
+	
+	
+	
+	

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css"/>
+</head>
+<body>
+<div id="error">
+
+</div>
+<script src="/js/jquery-1.8.0.min.js"></script>
+<script>
+ function printState(state) {
+     var s = '';
+     switch(state) {
+         case '0'://没有登录请登录
+              $('#error').html('登录失败，请重新登录');
+         break;
+     }
+ }
+</script>
+</body>
+</html>

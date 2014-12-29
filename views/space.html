@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=divice-width,initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>后台</title>
+	<link rel="stylesheet" href="/manage/css/bootstrap.css">
+	<link rel="stylesheet" href="/manage/css/backspace.css">
+	<link rel="stylesheet" href="/manage/css/tree.css">
+</head>
+<body>
+
+	<div class="navbar-fixed-top index-top">
+			<span class="spnt-cms">SPNT CMS</span>
+			<div class="index-logout"><span class="glyphicon glyphicon-off"></span></div>
+	</div>
+	<div class="container-fluid">		
+		<div class="row">					
+			<div class="main">
+				<!--登录后main-index-->
+				<div class="index-info">
+					<span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;系统信息
+					<div class="index-info-1"></div>
+				</div>
+				
+				<div class="index-info">
+					<span class="glyphicon glyphicon-qrcode"></span>&nbsp;&nbsp;开发者信息
+					<div class="index-info-1"></div>
+				</div> 
+				<!--登录后main-index-->
+					
+				<div id="info-toggle"><!--右侧留言板块--></div>			
+			</div>											
+		</div>
+		
+		<div class="index-left-bg">
+			<!--左侧默认显示-->
+				<ul id="index-show-ul" class="list-unstyled index-show-ul">
+					<li out1="xinxi" out2="1"><a href="#" class="glyphicon glyphicon-envelope"> 信息管理</a>
+					</li>
+					<li out1="renmai" out2="6"><a href="#" class="glyphicon glyphicon-globe"> 人脉管理</a>
+					</li>
+					<li out1="hudong" out2="2"><a href="#" class="glyphicon glyphicon-random"> 互动管理</a>
+					</li>
+					<li out1="xitong" out2="3"><a href="#" class="glyphicon glyphicon-cog"> 系统管理</a>
+					</li>
+					<li out1="tuozhan" out2="4"><a href="#" class="glyphicon glyphicon-resize-horizontal"> 扩展管理</a>
+					</li>
+					<li out1="luntan" out2="5"><a href="#" class="glyphicon glyphicon-th"> 论坛管理</a>
+					</li>
+				</ul>
+
+			
+			<!--点击后出现在最左侧的图标-->
+				<div class="click-left-1">
+					<span out="index-show-ul" class="glyphicon glyphicon-arrow-right"></span>
+					<span out="index-show-ul" class="glyphicon glyphicon-home"></span>
+					<span id="1" out="xinxi" class="glyphicon glyphicon-envelope"></span>
+					<span id="6" out="renmai" class="glyphicon glyphicon-globe"></span>
+					<span id="2" out="hudong" class="glyphicon glyphicon-random"></span>
+					<span id="3" out="xitong" class="glyphicon glyphicon-cog"></span>
+					<span id="4" out="tuozhan" class="glyphicon glyphicon-resize-horizontal"></span>
+					<span id="5" out="luntan" class="glyphicon glyphicon-stats"></span>
+				</div>
+			
+			<!--左侧默认显示主界面-->
+				<div class="click-left-2">
+					<!--信息管理-->
+					<ul id="xinxi" class="list-unstyled click-left-2-3">
+						<span id="click-left-2-3-nored">信息管理</span>
+						<li onclick="loadtemp('lanmu');">栏目管理</li>
+						<li onclick="loadtemp('wenzhang');">文章管理</li>
+						<li onclick="loadtemp('mokuai');">模块管理</li>
+					</ul>
+					<!--人脉管理-->
+					<ul id="renmai" class="list-unstyled click-left-2-3">
+						<span id="click-left-2-3-nored">人脉管理</span>
+						<li onclick="loadtemp('tuijian');bpUI.userRecoShow();">人员推荐</li>
+						<li>李克强</li>
+						<li>张德江</li>
+					</ul>
+					<!--互动管理-->
+					<ul id="hudong" class="list-unstyled click-left-2-3">
+						<span id="click-left-2-3-nored">互动管理</span>
+						<li onclick="loadtemp('liuyan');">留言管理</li>
+						<li onclick="loadtemp('toupiao');">投票管理</li>
+					</ul>
+					<!--系统管理-->
+					<ul id="xitong" class="list-unstyled click-left-2-3">
+						<span id="click-left-2-3-nored">系统管理</span>
+						<li onclick="loadtemp('yonghu');">用户管理</li>
+						<li onclick="loadtemp('moban');">模板管理</li>
+						<li onclick="loadtemp('xitong');">系统设置</li>
+					</ul>
+					<!--拓展管理-->
+					<ul id="tuozhan" class="list-unstyled click-left-2-3">
+						<span id="click-left-2-3-nored">AAAA</span>
+						<li>B</li>
+						<li>C</li>
+						<li>D</li>
+					</ul>
+					<!--论坛管理-->
+					<ul id="luntan" class="list-unstyled click-left-2-3">
+						<span id="click-left-2-3-nored">1</span>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+								
+					<ul class="list-unstyled click-left-2-3">
+						<span id="click-left-2-3-nored">快捷通道</span>
+					</ul>
+				</div>
+			</div>	
+	</div>
+
+
+<script src="/manage/js/jquery-2.1.1.min.js"></script>
+<script src="/manage/plug/layer/layer.min.js"></script>
+<script src="/manage/js/ejs.js"></script>
+<script src="/manage/js/bootstrap.js"></script>
+<script src="/manage/js/backspace.js"></script>
+<script src="/manage/js/tree.js"></script>
+<script>
+</script>
+</body>
+</html>

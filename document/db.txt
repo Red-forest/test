@@ -1,0 +1,54 @@
+用户 users
+int       id             //编号
+String    name  20       //名称
+String    pwd   20       //密码
+String    email 50       //邮箱
+
+
+栏目 types
+int       id              //编号
+int       pid             //栏目ID
+String    name  50        //名称
+String    ename 50        //英文名称
+String    brief   1000    //概要
+int       templistid      //模板ID //列表页面
+int       tempid          //模板ID     //正文页面
+int       weight          //权重
+
+
+模板管理 template   //正文页面
+int        id             //编号
+String     name  50       //名称
+String     path  50       //路径
+int        styleid        //类别ID
+
+文章表 article
+int        id             //编号
+String     name  50       //名称
+String     img   50       //图片
+max        content        //内容
+String     brief   1000   //概要
+int        typesid        //栏目ID
+int        count          //点击率
+int        reco           //记录
+time       addtime        //添加时间
+
+留言管理 messages
+int        id              //编号 
+String     name     5      //名称   
+String     ipone    20     //电话
+String     sex      5      //性别
+String     age      5      //姓名
+String     address   100   //地址
+String     email     50    //邮箱
+String     content   1000  //内容
+
+
+模块管理 modules
+int         id             //编号
+String      name      50   //名称
+max         content        //内容
+
+
+
+

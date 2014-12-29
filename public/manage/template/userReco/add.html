@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="/manage/css/bootstrap.css">
+	<link rel="stylesheet" href="/manage/css/backspace.css">
+</head>
+<body>
+
+	<div id="lanmu-add">
+		<div class="lanmu-add">
+			<span>i d</span><input type="text" class="lanmu-add-input1" placeholder="">
+		</div>
+		<div class="lanmu-add">
+			<span>neoid</span><input type="text" class="lanmu-add-input2" placeholder="">
+		</div>
+		<div class="lanmu-add">
+			<span>city</span>
+			<select style="width:220px;height:42px;padding-left:80px;margin-left:-5px;" class="lanmu-add-input3">
+				<option value="北京">北京</option>
+				<option value="上海">上海</option>
+				<option value="广州">广州</option>
+				<option value="深圳">深圳</option>
+				<option value="郑州" selected="selected">郑州</option>
+				<option value="重庆">重庆</option>
+				<option value="成都">成都</option>
+				<option value="杭州">杭州</option>
+				<option value="武汉">武汉</option>
+			</select>
+		</div>
+		<div class="lanmu-add">
+			<span>昵 称</span><input type="text" class="lanmu-add-input4" placeholder="">
+		</div class="lanmu-add">
+		<div id="lanmu-add-btn" onclick="submit()">确 定</div>
+	</div>
+
+
+
+<script src="/manage/js/jquery-2.1.1.min.js"></script>
+<script src="/manage/plug/layer/layer.min.js"></script>
+<script src="/manage/js/ejs.js"></script>
+<script src="/manage/js/bootstrap.js"></script>
+<script src="/manage/js/backspace.js"></script>
+<script>
+	
+	var submit = function () {
+		var options = $(".lanmu-add-input3 option:selected");
+		var uid = $('.lanmu-add-input1').val(),
+			neoid = $('.lanmu-add-input2').val(),
+			city = options.val(),
+			nickname = $('.lanmu-add-input4').val();
+		$.ajax({
+			type: 'POST',
+			url: '/manage/userReco/create',
+			data: 'uid=' + uid + '&neoid=' + neoid + '&city=' + city + '&nickname=' + nickname,
+			dataType: 'JSON',
+			success: function (msg) {
+				parent.$('.main-liuyan-4 ul').prepend('<li><em class="glyphicon glyphicon-unchecked" _id=' + msg._id + '></em><span>' + msg.nickname + '</span><span>' + msg.city + ' </span></li>');
+				
+				parent.$('.main-liuyan-4 em').bind('click', function () {bpUI.choiceOne($(this));
+				});
+				
+				var index = parent.layer.getFrameIndex(window.name);
+				parent.layer.close(index);				
+			}			
+		});
+	};
+</script>
+</body>
+</html>

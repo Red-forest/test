@@ -1,0 +1,10 @@
+body{background-color:#54364a;background-size:cover;background-image:url(../images/a.jpg);}
+ul{list-style:none;}
+.navbar-inverse{height:50px;padding:10px 3px;background-color:rgba(0, 0, 0, 0.25);border-bottom:1px solid rgba(255, 255, 255, 0.2);height:70px;}
+.leftnav{border-right:1px solid rgba(255, 255, 255, 0.2);background-color:rgba(0, 0, 0, 0.2);margin-top:-20px;height:2000px;color:#fff;}
+.leftnav{color:#fff;padding:0px;}
+.sidebar{padding:0px;width:100%;margin-top:20px;text-align:center;line-height:22px;}
+.sidebar li{height:51px;}
+.sidebar a{color:#fff;display:block;width:149px;height:50px;padding:15px;}
+.sidebar a:hover{background-color:rgba(0, 0, 0, 0.3);}
+.sidebar a i{margin-right:10px;}

@@ -1,0 +1,72 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=divice-width,initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>login</title>
+	<link rel="stylesheet" href="/manage/css/bootstrap.css">
+	<link rel="stylesheet" href="/manage/css/backspace.css">
+</head>
+<body style="background-color:#a2b1c4">
+
+	<div class="container">
+		<div class="row">
+			<div class="login-top"></div>			
+		</div>
+		<div class="login-signin row">
+			<div id="user-pass">
+			<form id="login-form" onsubmit="return false;">
+				<div class="row">
+					<span>用户名：</span>
+					<input type="text" value="">
+				</div>
+				<div class="row">
+					<span>密&nbsp;&nbsp;&nbsp;&nbsp;码：</span>
+					<input type="password" value="">
+				</div>	
+				<input type='submit' id='login-saved' style="display:none;">
+			</form>
+			</div>
+			<input id="login-login" type="button" value="登&nbsp;&nbsp;录" onclick="login.get();">
+		
+		</div>		
+	</div>
+
+
+<script src="/manage/js/jquery-2.1.1.min.js"></script>
+<script src="/manage/js/bootstrap.js"></script>
+<script>
+	var login = new function () {
+		this.get = function() {
+			$('#login-saved').click();
+			$.ajax({
+				type: 'POST',
+				url : '/user/login',
+				data: 'id=' + $('input[type="text"]').val() + "&pwd=" + $('input[type="password"]').val(),
+				success: function(msg) {
+					if( msg.state == 'true') {
+						document.location.href = '/manage/space';
+					} else {
+						alert('用户名或密码错误！');
+					};
+				}
+			});
+		};
+		
+	}
+	
+	$(document).keydown(function(e) {
+		if(e.which == 13) {
+			login.get();
+		};
+	});
+	
+</script>
+</body>
+</html>
+
+

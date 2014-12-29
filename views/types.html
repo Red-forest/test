@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>xxx</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css"/>
+	<style>
+		body {width:800px;height:800px;margin:0 auto;}
+		#a {width:800px;height:200px;border:1px solid #ccc;}
+	</style>
+</head>
+<body>
+	<!--types/v-->
+
+	name：<input type = 'text' id="name" />
+	brief:<input type = 'text' id = 'brief' />
+	ename：<input type = 'text' id = 'ename' />
+	<input type = 'button'  value = 'create' onclick="types.create();" />
+	
+	
+	<br />
+	
+	
+	ID：<input type = 'text' id="getid" />
+	<input type = 'button'  value = 'get' onclick="types.get();" />
+	<div id = 'a'></div>
+
+	<br />
+	
+	
+	pid：<input type = 'text' id="pid1" />
+	name：<input type = 'text' id="name1" />
+	ename：<input type = 'text' id="ename1" />
+	brief：<input type = 'text' id="brief1" /><br />
+	tempid：<input type = 'text' id="tempid1" />
+	templistid：<input type = 'text' id="templistid1" />
+	weight：<input type = 'text' id="weight1" />
+	
+	<input type = 'button'  value = 'update' onclick="types.update();" />
+
+
+	<br />
+	
+	
+	pid：<input type = 'text' id="getpid" />
+	<input type = 'button'  value = 'page' onclick="types.page();" />
+
+
+	<br />
+	
+	
+	
+	
+	
+	
+	
+
+
+<script src="/js/jquery-1.8.0.min.js"></script>
+<script>
+var types = new function() {
+	var _self = this;
+	_self.create = function() {
+		$.ajax({
+			type: 'POST',
+			url: '/types/create',
+			data: '&name=' + $('#name').val()+'&brief=' + $('#brief').val()+'&ename=' + $('#ename').val(),
+			success: function(msg) {
+			
+			}
+		});
+	}
+	
+	_self.get = function() {
+		$.ajax({
+			type: 'POST',
+			url: '/types',
+			data: '&id=' + $('#getid').val(),
+			success: function(msg) {
+				$('#a').html(JSON.stringify(msg));
+			}
+		});
+	}
+	
+	_self.update = function() {
+		$.ajax({
+			type: 'POST',
+			url: '/types/update',
+			data: '&pid=' + $('#pid1').val() + '&name=' + $('#name1').val() + '&ename=' + $('#ename1').val() + '&brief=' + $('#brief1').val() + '&tempid=' + $('#tempid1').val() + '&templistid=' + $('#templistid1').val() + '&weight=' + $('#weight1').val(),
+			success: function(msg) {
+
+			}
+		});
+	}
+	
+
+	
+	_self.page = function () {
+		$.ajax ({
+			type: 'POST',
+			url: '/types/page',
+			data: '&pid=' + $('#getpid').val(),
+			success: function (msg) {
+				$('#a').html(JSON.stringify(msg));
+			}
+		});
+	}
+	
+}
+</script>
+</body>
+</html>

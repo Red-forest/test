@@ -1,0 +1,100 @@
+
+
+<div class="main-liuyan">
+	<div class="main-liuyan-1" style="display:none;">
+		<em>
+			<span class="glyphicon glyphicon-unchecked"></span>
+			<span>全选&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		</em>
+		<span>添加</span>&nbsp;&nbsp;
+		<span>删除</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="dropdown">
+			<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+				城市
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">全部</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">北京</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">上海</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">广州</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">深圳</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">郑州</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">重庆</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">成都</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">杭州</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">武汉</a></li>
+			</ul>
+		</span>						
+	</div>
+
+	<div class="main-liuyan-4">
+		<ul class="list-unstyled"></ul>
+	</div>
+</div>
+
+<script>
+
+	$('.main-liuyan-1 span').eq(2).bind('click', function () {
+		bpLayer.iframe(400, 400, '添加', './template/userReco/add.html');
+	});//添加
+	
+	$('.main-liuyan-1 span').eq(3).bind('click', function () {
+		var len = $('.glyphicon-check').length;
+		var _id = '';
+		for(var i=0; i < len; i++) {
+			var id = $('.glyphicon-check').eq(i).attr('_id') + ',';
+			_id += id;				
+		}	
+		$.ajax({
+			type: 'POST',
+			url : '/manage/userReco/del',
+			data: 'id=' + _id,
+			dataType: 'JSON',
+			success : function (msg) {
+				bpUI.del();//删除
+			}
+		});
+	});
+	
+	$('.dropdown-menu li').bind('click', function () {
+		var _this = $(this);
+		var len = $('.dropdown-menu li').length;
+		$('.main-liuyan-4 li').remove();
+		
+		$.ajax({
+		type: 'POST',
+		url : '/manage/userReco/page',
+		data: '&city=' + $(this).text(),
+		dataType: 'JSON',
+		success : function (msg) {
+			bpUI.city(_this);//显示城市名
+			for(var i = 0; i < msg.length; i++ ) {
+				$('.main-liuyan-4 ul').prepend('<li><em class="glyphicon glyphicon-unchecked" _id=' + msg[i]._id + '></em><span>' + msg[i].nickname + '</span><span>' + msg[i].city + ' </span></li>');
+				};
+			
+				$('.main-liuyan-4 em').bind('click', function() {
+					bpUI.choiceOne($(this));//单选
+				});				
+			}
+		});
+		
+	});
+	
+	
+	$('.main-liuyan-1 em:first-child').bind('click', function () {
+		bpUI.choiceAll();//全选
+	});
+	
+		
+	bpUI.p_out();//最后一页
+	
+</script>
+
+
+
+
+
+
+

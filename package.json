@@ -1,0 +1,39 @@
+{
+  "name": "renmai",
+  "version": "0.0.1",
+  "description": "ren mai system",
+  "main": "app.js",
+  "scripts": {
+    "test": ""
+  },
+  "dependencies": {
+    "async": "^0.7.0",
+    "bufferhelper": "^0.2.0",
+    "connect": "^2.14.4",
+    "ejs": "^1.0.0",
+    "express": "3.5.1",
+    "formidable": "^1.0.15",
+    "generic-pool": "^2.0.4",
+    "log4js": "^0.6.13",
+    "request": "^2.39.0",
+    "sqlite3": "^3.0.4",
+    "xss": "^0.1.9"
+  },
+  "engines": {
+    "node": "0.10.26",
+    "npm": "1.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://code.jd.com/huabinglan_m/renmai.git"
+  },
+  "keywords": [
+    "renmai",
+    "html5"
+  ],
+  "author": "zuoyan",
+  "license": "BSD",
+  "gitHead": "a4c182a5121aa047e62f13be1135e6fb309dae4f",
+  "devDependencies": {},
+  "optionalDependencies": {}
+}

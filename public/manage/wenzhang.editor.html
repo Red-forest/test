@@ -1,0 +1,130 @@
+
+
+<div class="main-liuyan">
+	<ul class="list-unstyled wenzhang-editor">
+		<li>
+			<span>标题</span>
+			<input type="text" id="title">
+		</li>
+		<li>
+			<span>栏目名称</span>
+			<i class="dropdown">
+				<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+					首页
+					<em class="caret"></em>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">首页</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">网站优化</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">网站营销</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">随笔</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">注意</a></li>
+				</ul>
+			</i>
+		</li>
+		<li>
+			<span>文章类型</span>
+		</li>
+		<li>
+			<span>标题图片</span>
+			<input type="text" id="title">&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" value="上传">
+		</li>
+		<li>
+			<span>属性</span>
+			<i class="dropdown btn-group">
+				<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+					审核
+					<em class="caret"></em>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">审核</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">未审核</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">关闭</a></li>
+				</ul>
+			</i>
+			<i class="dropdown btn-group">
+				<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+					不推荐
+					<em class="caret"></em>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">不推荐</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">1级推荐</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">2级推荐</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">3级推荐</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">4级推荐</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">推荐到专题</a></li>
+				</ul>
+			<i>
+		</li>
+		<li>
+			<span>链接地址</span>
+			<input type="text" id="title">
+		</li>
+		<li>
+			<span style="vertical-align:top;">信息简介</span>
+			<textarea style="width:580px;"></textarea>
+		</li>
+		<li>
+			<span>批量上传</span>
+			<input type="text" value="abc">&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" value="上传">&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="checkbox">&nbsp;&nbsp;添加水印
+			<input type="button" value="添加到编辑器">
+			全部取消&nbsp;&nbsp;<input type="checkbox">
+		</li>
+		<li>
+			<span>内容</span>
+			<input type="button" value="添加到编辑器">
+			&nbsp;&nbsp;<input type="checkbox">
+		</li>
+		<textarea id="editor_id" name="content" style="width:700px;height:400px;">
+		&lt;strong&gt;HTML内容&lt;/strong&gt;
+		</textarea>
+		<li></li>
+		<li>
+			<span>来源</span>
+			<input type="text">
+		</li>
+		<li>
+			<span>标签</span>
+			<input type="text">
+		</li>
+		<li>
+			<span>添加日期</span>
+			<input type="text">
+		</li>
+		<input type="button" value="提交">
+		<input type="button" value="返回">
+	</ul>
+</div>
+
+<script charset="utf-8" src="/plug/kindeditor/kindeditor-min.js"></script>
+<script charset="utf-8" src="/plug/kindeditor/lang/zh_CN.js"></script>
+<script>
+        KindEditor.ready(function(K) {
+                window.editor = K.create('#editor_id');
+        });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

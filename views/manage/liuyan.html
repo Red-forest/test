@@ -1,0 +1,77 @@
+
+
+<div class="main-liuyan">
+	<div class="main-liuyan-1" style="display:none;">
+		<em>
+			<span class="glyphicon glyphicon-unchecked"></span>
+			<span>全选&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		</em>
+		<span>审核已选 </span>/
+		<span>取消审核已选 </span>/
+		<span>删除已选</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>第<em> 1 </em>页 &nbsp; 总共<em> 12 </em>页</i>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="dropdown">
+			<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+				显示所有
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">显示审核</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">未审核</a></li>
+			</ul>
+		</span>	
+		
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="请输入搜索文本">
+			<span class="input-group-addon glyphicon glyphicon-search"></span>
+		</div>						
+	</div>
+
+	<div class="main-liuyan-3">
+		<span>取消审核</span>
+		<span>查看回复</span>
+		<span>添加回复</span>
+		<span>删除</span>					
+	</div>
+	<div class="main-liuyan-4">
+		<ul class="list-unstyled">
+			<li>
+				<em class="glyphicon glyphicon-unchecked"></em>
+				<span>赵海涛</span>
+				<span>郑东新区会展中心</span>
+			</li>
+			<li>
+				<em class="glyphicon glyphicon-unchecked"></em>
+				<span>赵海涛</span>
+				<span>郑东新区会展中心</span>
+			</li>
+			<li>
+				<em class="glyphicon glyphicon-unchecked"></em>
+				<span>赵海涛</span>
+				<span>郑东新区会展中心</span>
+			</li>
+		</ul>
+		<p>当前已是最后一页</p>
+	</div>
+</div>
+
+<script>
+	$('.main-liuyan-1 em:first-child').bind('click', function () {
+		bpUI.choiceAll();
+	});
+	
+	$('.main-liuyan-4 em').bind('click', function () {
+		bpUI.choiceOne($(this));
+	});
+		
+	bpUI.p_out();
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+<div class="main-liuyan">
+	<div class="main-liuyan-1">
+		<em>
+			<span class="glyphicon glyphicon-unchecked"></span>
+			<span>全选&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		</em>
+		<span>添加文章 </span>/
+		<span>审核已选 </span>/
+		<span>关闭已选</span>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<i>当前第<em> 1 </em>页 &nbsp;</i>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<span class="dropdown">
+			<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+				首页
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">网站优化</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">网站营销</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">随笔</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">注意</a></li>
+			</ul>
+		</span>
+		
+		<span class="dropdown">
+			<button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+				请选择作者
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">胡锦涛</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">习近平</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">温家宝</a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#">李克强</a></li>
+			</ul>
+		</span>
+		
+		<div class="input-group">
+			<input type="text" class="form-control" placeholder="请输入搜索文本">
+			<span class="input-group-addon glyphicon glyphicon-search"></span>
+		</div>						
+	</div>
+
+	<div class="main-liuyan-3">
+		<span>取消审核</span>
+		<span>查看回复</span>
+		<span>添加回复</span>
+		<span>删除</span>					
+	</div>
+	<div class="main-liuyan-4">
+		<ul class="list-unstyled">
+			<li>
+				<em class="glyphicon glyphicon-unchecked"></em>
+				<span>赵海涛</span>
+				<span>郑东新区会展中心</span>
+			</li>
+			<li>
+				<em class="glyphicon glyphicon-unchecked"></em>
+				<span>赵海涛</span>
+				<span>郑东新区会展中心</span>
+			</li>
+			<li>
+				<em class="glyphicon glyphicon-unchecked"></em>
+				<span>赵海涛</span>
+				<span>郑东新区会展中心</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script>
+	$('.main-liuyan-1 em:first-child').bind('click', function () {
+		bpUI.choiceAll();
+	});
+	
+	$('.main-liuyan-4 em').bind('click', function () {
+		bpUI.choiceOne($(this));
+	});
+</script>
+	
+	
+	
+	
+	
+	
+	
